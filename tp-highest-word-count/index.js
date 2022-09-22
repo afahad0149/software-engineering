@@ -26,12 +26,7 @@ function highestWordCount (str) {
     }
   });
 
-  let max = 0;
-  for (const [key, value] of Object.entries(count)) {
-    if (value > max) {
-      max = value;
-    }
-  }
+  const max = _.max(Object.values(count));
 
   out = [];
   for (const [key, value] of Object.entries(count)) {
