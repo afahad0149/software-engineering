@@ -19,6 +19,7 @@ function highestWordCount (str) {
 
   str = str.replace(/[.,/#!$%^&*;:{}=\-_`~()]/g,'');
   arr = str.split(' ');
+  
   count = {};
   arr.forEach(element => {
     if ( /[a-z]/i.test(element)) {
