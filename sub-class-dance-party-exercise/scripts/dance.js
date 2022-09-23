@@ -50,43 +50,30 @@ $(() => {
     $('#stage').append( dancer.rainbowDancer() );
   });
 
-
   // Dance & Rest buttons
 
   function letsDance (selector) {
-
     const h = $(window).height();
     const w = $(window).width();
-    
     const nh = Math.floor(Math.random() * h);
     const nw = Math.floor(Math.random() * w);
-    
     $(selector).animate({ top: nh, left: nw }, 1000, function () { letsDance(selector); });
-    
   }
 
   $('#dance').click( function () {
-
     const elements = $('.dancer').get();
-
     elements.forEach( (element) => {
       element.startPos = $(element).offset();
       letsDance(element);
     });
-
   });
 
   $('#rest').click( function () {
-
     const elements = $('.dancer').get();
-
     elements.forEach( (element) => {
       $(element).stop();
-      $(element).css({top: element.startPos.top, left: element.startPos.left});
+      $(element).animate({top: element.startPos.top, left: element.startPos.left});
     });
-
   });
 
 });
-
-
