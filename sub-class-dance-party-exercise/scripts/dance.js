@@ -51,7 +51,7 @@ $(() => {
   });
 
 
-
+  // Dance & Rest buttons
 
   function letsDance (selector) {
 
@@ -86,7 +86,6 @@ $(() => {
     });
 
   });
-
 
 });
 
