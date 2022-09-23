@@ -239,9 +239,11 @@ describe('JayQuery', () => {
   // custom data test
   describe('data', () => {
 
-    $('.test').each(function () {
-      $(this).data.should.equal(text2);
+    it('should not convert to HTML elements when the string is HTML', () => {
+      J$('.test').data('foo', 52);
+      J$('.test').data('foo'),should.equal(52);
     });
+  
   });
 
 });

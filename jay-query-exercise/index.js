@@ -78,7 +78,14 @@ const allMethods = {
 
   data: function (key, value) {
     this.forEach((element) => {
-      element.setAttribute(key, value);
+      if ( value ) {
+        element.dataaa[key] = value;
+        return value;
+      } else if ( key ) {
+        return element.dataaa[key];
+      } else {
+        return element.dataaa;
+      }
     });
     return this;
   }
@@ -98,7 +105,6 @@ J$.ready = function (handler) {
   document.addEventListener('DOMContentLoaded', handler);
   console.log('DOM loaded successfully');
 };
-
 
 // Allow tests to run on the server (leave at the bottom)
 if (typeof window === 'undefined') {
