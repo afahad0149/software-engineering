@@ -41,12 +41,12 @@ $(() => {
   });
 
   $('#tapper').click( function () {
-    dancer = new Dancer();
+    const dancer = new Dancer();
     $('#stage').append( dancer.tapDancer() );
   });
 
   $('#rainbow').click( function () {
-    dancer = new Dancer();
+    const dancer = new Dancer();
     $('#stage').append( dancer.rainbowDancer() );
   });
 
