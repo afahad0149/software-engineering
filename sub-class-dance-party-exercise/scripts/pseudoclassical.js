@@ -2,7 +2,6 @@
 $(() => {
 
   function Dancer ( top, left ) {
-
     this.top = top;
     this.left = left;
     this.$node = $('<div class="dancer"></div>');
