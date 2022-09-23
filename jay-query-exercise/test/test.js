@@ -239,9 +239,9 @@ describe('JayQuery', () => {
   // custom data test
   describe('data', () => {
 
-    it('should not convert to HTML elements when the string is HTML', () => {
-      J$('.test').data('foo', 52);
-      J$('.test').data('foo'),should.equal(52);
+    it('should return 100', () => {
+      console.log(J$('.test').data('foo', 100));
+      J$('.test').data('foo').should.equal(100);
     });
   
   });

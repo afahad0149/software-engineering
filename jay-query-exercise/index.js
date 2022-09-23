@@ -78,16 +78,16 @@ const allMethods = {
 
   data: function (key, value) {
     this.forEach((element) => {
+      element.data = {};
       if ( value ) {
-        element.dataaa[key] = value;
-        return value;
+        element.data[key] = value;
+        return element.data[key];
       } else if ( key ) {
-        return element.dataaa[key];
+        return element.data[key];
       } else {
-        return element.dataaa;
+        return element.data;
       }
     });
-    return this;
   }
 
 };
@@ -105,6 +105,7 @@ J$.ready = function (handler) {
   document.addEventListener('DOMContentLoaded', handler);
   console.log('DOM loaded successfully');
 };
+
 
 // Allow tests to run on the server (leave at the bottom)
 if (typeof window === 'undefined') {
