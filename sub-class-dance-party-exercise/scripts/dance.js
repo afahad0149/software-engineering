@@ -30,7 +30,7 @@ $(() => {
     }
 
     randomStagePosition () {
-      return String(Math.random() * 100 | 0)+'%';
+      return String(Math.random() * 95 | 0)+'%';
     }
 
   }
@@ -55,29 +55,40 @@ $(() => {
   function letsDance (selector) {
     const h = $(window).height();
     const w = $(window).width();
-    const nh = Math.floor(Math.random() * h);
-    const nw = Math.floor(Math.random() * w);
+    const nh = Math.floor(Math.random()*0.9 * h);
+    const nw = Math.floor(Math.random()*0.9 * w);
     $(selector).animate({ top: nh, left: nw }, 1000, function () { letsDance(selector); });
   }
 
+  let btnDance = false;
+  let btnRest = false;
+
   $('#dance').click( function () {
-    const elements = $('.dancer').get();
-    elements.forEach( (element) => {
-      element.startPos = $(element).offset();
-      if ( element.dancePos )
-        $(element).animate({top: element.dancePos.top, left: element.dancePos.left});
-      letsDance(element);
-    });
+    if ( !btnDance ) {
+      const elements = $('.dancer').get();
+      elements.forEach( (element) => {
+        element.startPos = $(element).offset();
+        if ( element.dancePos )
+          $(element).animate({top: element.dancePos.top-50, left: element.dancePos.left});
+        letsDance(element);
+      });
+      btnDance = true;
+      btnRest  = false;
+    }
   });
 
   $('#rest').click( function () {
-    const elements = $('.dancer').get();
-    elements.forEach( (element) => {
-      $(element).stop();
-      element.dancePos = $(element).offset();
-      if ( element.startPos )
-        $(element).animate({top: element.startPos.top, left: element.startPos.left});
-    });
+    if ( !btnRest ) {
+      const elements = $('.dancer').get();
+      elements.forEach( (element) => {
+        $(element).stop();
+        element.dancePos = $(element).offset();
+        if ( element.startPos )
+          $(element).animate({top: element.startPos.top-50, left: element.startPos.left});
+      });
+      btnRest  = true;
+      btnDance = false;
+    }
   });
 
 });
