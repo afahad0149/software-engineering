@@ -58,10 +58,10 @@ header {
   0% {
     background-color: red;
   }
-  25% {
+  33% {
     background-color: green;
   }
-  75% {
+  66% {
     background-color: blue;
   }
   100% {
@@ -69,7 +69,7 @@ header {
   }
 }
 .rainbow {
-  animation: rainbow 10s infinite;
+  animation: rainbow 5s infinite;
 }
 
 

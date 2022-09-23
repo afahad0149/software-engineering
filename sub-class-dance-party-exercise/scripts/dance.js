@@ -64,6 +64,8 @@ $(() => {
     const elements = $('.dancer').get();
     elements.forEach( (element) => {
       element.startPos = $(element).offset();
+      if ( element.dancePos )
+        $(element).animate({top: element.dancePos.top, left: element.dancePos.left});
       letsDance(element);
     });
   });
@@ -72,7 +74,9 @@ $(() => {
     const elements = $('.dancer').get();
     elements.forEach( (element) => {
       $(element).stop();
-      $(element).animate({top: element.startPos.top, left: element.startPos.left});
+      element.dancePos = $(element).offset();
+      if ( element.startPos )
+        $(element).animate({top: element.startPos.top, left: element.startPos.left});
     });
   });
 
