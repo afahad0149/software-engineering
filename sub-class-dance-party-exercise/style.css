@@ -45,13 +45,13 @@ header {
   width: 15px;
 }
 
-@keyframes blink {
+@keyframes blinker {
   50% {
     opacity: 0;
   }
 }
 .blink {
-  animation: blink 1s step-start 0s infinite;
+  animation: blinker 1s step-start 0s infinite;
 }
 
 @keyframes rainbow {

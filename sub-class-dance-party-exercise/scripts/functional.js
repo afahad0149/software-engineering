@@ -32,7 +32,18 @@ $(() => {
     return String(Math.random() * 100 | 0)+'%';
   }
 
-  
+  dancerMethods.tapDancer = function () {
+
+    return this.$node.addClass('blink');
+
+  };
+
+  dancerMethods.rainbowDancer = function () {
+
+    return this.$node.addClass('rainbow');
+
+  };
+
   $('#regular').click( function () {
 
     const top  = randomStagePosition();
@@ -41,15 +52,6 @@ $(() => {
     $('#stage').append( Dancer( top, left ).$node );
 
   });
-
-
-  dancerMethods.tapDancer = function () {
-
-    this.$node.addClass('blink');
-
-    return this.$node;
-
-  };
 
   $('#tapper').click( function () {
 
@@ -60,14 +62,6 @@ $(() => {
 
   });
 
-  dancerMethods.rainbowDancer = function () {
-
-    this.$node.addClass('rainbow');
-
-    return this.$node;
-
-  };
-
   $('#rainbow').click( function () {
 
     const top  = randomStagePosition();
@@ -76,7 +70,6 @@ $(() => {
     $('#stage').append( Dancer( top, left ).rainbowDancer() );
 
   });
-
 
 });
 
