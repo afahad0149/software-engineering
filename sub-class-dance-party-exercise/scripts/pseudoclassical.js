@@ -1,0 +1,8 @@
+
+$(() => {
+
+  function Dancer (top, left) {
+
+  }
+
+});
