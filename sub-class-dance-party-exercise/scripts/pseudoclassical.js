@@ -27,21 +27,21 @@ $(() => {
   $('#regular').click( function () {
     const top  = randomStagePosition();
     const left = randomStagePosition();
-    dancer = new Dancer( top, left );
+    const dancer = new Dancer( top, left );
     $('#stage').append( dancer.$node );
   });
 
   $('#tapper').click( function () {
     const top  = randomStagePosition();
     const left = randomStagePosition();
-    dancer = new Dancer( top, left );
+    const dancer = new Dancer( top, left );
     $('#stage').append( dancer.tapDancer() );
   });
 
   $('#rainbow').click( function () {
     const top  = randomStagePosition();
     const left = randomStagePosition();
-    dancer = new Dancer( top, left );
+    const dancer = new Dancer( top, left );
     $('#stage').append( dancer.rainbowDancer() );
   });
 
