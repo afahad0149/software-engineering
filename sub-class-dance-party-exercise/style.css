@@ -19,7 +19,7 @@ header {
   padding-right: 25px;
 }
 
-.btn {
+button {
   background-color: transparent;
   border: 1px solid #999;
   border-radius: 5%;
@@ -29,7 +29,7 @@ header {
   padding: 6px 15px;
 }
 
-.btn:hover {
+button:hover {
   background-color: #fff;
   border-color: #fff;
   color: #333;
@@ -41,7 +41,7 @@ header {
   border-color: #666;
 }
 
-.actived {
+.activated {
   background-color: '#fff';
   color: '#333';
 }
@@ -76,7 +76,7 @@ header {
   animation: blinker 1s step-start 0s infinite;
 }
 
-@keyframes rainbow {
+@keyframes rainbower {
   0% {
     background-color: red;
   }
@@ -91,7 +91,14 @@ header {
   }
 }
 .rainbow {
-  animation: rainbow 5s infinite;
+  animation: rainbower 5s infinite;
 }
 
 
+.colission {
+  background-color: yellow !important;
+  height: 15px !important;
+  width: 15px !important; 
+  border-radius: 100% !important;
+  opacity: 100% !important;
+}

@@ -69,18 +69,18 @@ $(() => {
     const w = $(window).width();
     const nh = Math.floor(Math.random()*0.9 * h);
     const nw = Math.floor(Math.random()*0.9 * w);
-    $(selector).animate({ top: nh, left: nw }, 1000, function () { letsDance(selector); });
+    iteract(selector);
+    $(selector).animate({ top: nh, left: nw }, 1500, function () { letsDance(selector); }).delay(-100);
   }
-
-
   $('#dance').prop('disabled', true).addClass('noHover');
   $('#rest').prop('disabled', true).addClass('noHover');
 
   $('#dance').click( function () {
+
+    stopDancing = false;
     
-    $('.btn').prop('disabled', true).addClass('noHover');
+    $('button').prop('disabled', true).addClass('noHover');
     $('#rest').prop('disabled', false).removeClass('noHover');
-    $('#dance').addClass('activated');
 
     const elements = $('.dancer').get();
     elements.forEach( (element) => {
@@ -89,20 +89,21 @@ $(() => {
         $(element).animate({top: element.dancePos.top-50, left: element.dancePos.left});
       letsDance(element);
     });
-    
-    dancersIteraction ();
 
   });
 
+  let stopDancing = false;
+
   $('#rest').click( function () {
 
-    $('.btn').prop('disabled', false).removeClass('noHover');
-    $('#dance').prop('disabled', false).removeClass('noHover');
-    $('#rest').addClass('activated');
+    stopDancing = true;
+
+    $('button').prop('disabled', false).removeClass('noHover');
+    $('#rest').prop('disabled', true).addClass('noHover');
 
     const elements = $('.dancer').get();
     elements.forEach( (element) => {
-      $(element).stop();
+      $(element).stop().removeClass('colission');
       element.dancePos = $(element).offset();
       $(element).animate({top: '97%'}).delay(200);
       if ( element.startPos )
@@ -110,7 +111,6 @@ $(() => {
     });
     
   });
-
 
   // Make dancer interact with each other
 
@@ -135,12 +135,91 @@ $(() => {
 
     console.log(topAvg, leftAvg);
 
-    $('#stage').append($('<div class="dancers-mean"></div>')).css({height: '+=len', width: '+=len'});
-    $('.dancers-mean').animate({top: topAvg, left: leftAvg});
+    $('#stage').append($('<div class="dancers-mean"></div>'));
+    $('.dancers-mean').animate({top: topAvg, left: leftAvg, height: '+='+len, width: '+='+len});
 
   }
 
-  //$('.btn').addClass('noHover');
-  //$('.btn').prop('disabled', true);
+  function iteract (element) {
+
+    const maxDiff = 10;
+
+    const topp = $(element).offset().top + maxDiff;
+    const bottom = $(element).offset().top - maxDiff;
+    const left = $(element).offset().left - maxDiff;
+    const right = $(element).offset().left + maxDiff;
+
+    const elements = $('.dancer').get();
+
+    elements.forEach( (element2) => {
+
+      if ( element != element2 ) {
+        
+        const coor = [ $(element2).offset().top, $(element2).offset().left ];
+      
+        if ( coor[0] <= topp && coor[0] >= bottom && coor[1] >= left && coor[1] <= right ) {
+          $(element).addClass('colission');
+          $(element2).addClass('colission');
+          $(element).stop();
+          $(element2).stop();
+          //$('#stage').append($(createLine(element, element2)));
+        }
+      }
+
+    });
+  }
+
+ 
+  window.setInterval(function () {
+
+    if ( !stopDancing ) {
+
+      const elements = $('.dancer').get();
+
+      elements.forEach( (element) => {
+        iteract(element);
+      });
+    }
+
+  }, 1);
+
+  //intervalID;
+
+  function createLine (el1, el2) {
+
+    var off1 = getElementProperty(el1);
+    var off2 = getElementProperty(el2);
+    // center of first point
+    var dx1 = off1.left + off1.width/2;
+    var dy1 = off1.top + off1.height/2;
+    // center of second point 
+    var dx2 = off2.left + off2.width/2;
+    var dy2 = off2.top + off1.height/2;
+    // distance
+    var length = Math.sqrt(((dx2-dx1) * (dx2-dx1)) + ((dy2-dy1) * (dy2-dy1)));
+    // center
+    var cx = ((dx1 + dx2) / 2) - (length / 2);
+    var cy = ((dy1 + dy2) / 2) - (2	 / 2);
+    // angle
+    var angle = Math.atan2((dy1-dy2),(dx1-dx2))*(180/Math.PI);
+    // draw line
+
+    return  `<section class="connectingLines" style="left:${cx}px; top:${cy}px; width:${length}px; -webkit-transform:rotate(${angle}deg); transform:rotate(${angle}deg);"></section>`;
+  }
+  
+  function getElementProperty (el) {
+
+    var dx = 0;
+    var dy = 0;
+    var width = el.width() || 0;
+    var height = el.height() || 0;
+    
+    dx += el.position().left;
+    dy += el.position().top;
+    
+    return { top: dy, left: dx, width: width, height: height };
+
+  }
+    
 
 });
