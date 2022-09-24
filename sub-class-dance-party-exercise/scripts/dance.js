@@ -64,14 +64,16 @@ $(() => {
 
   // Dance & Rest buttons
 
-  function letsDance (selector) {
+  function letsDance (element) {
+
     const h = $(window).height();
     const w = $(window).width();
     const nh = Math.floor(Math.random()*0.9 * h);
     const nw = Math.floor(Math.random()*0.9 * w);
-    iteract(selector);
-    $(selector).animate({ top: nh, left: nw }, 1500, function () { letsDance(selector); }).delay(-100);
+    $(element).animate({ top: nh, left: nw }, 1500, function () { letsDance(element); });
+
   }
+
   $('#dance').prop('disabled', true).addClass('noHover');
   $('#rest').prop('disabled', true).addClass('noHover');
 
@@ -85,8 +87,7 @@ $(() => {
     const elements = $('.dancer').get();
     elements.forEach( (element) => {
       element.startPos = $(element).offset();
-      if ( element.dancePos )
-        $(element).animate({top: element.dancePos.top-50, left: element.dancePos.left});
+      //if ( element.dancePos ) $(element).animate({top: element.dancePos.top-50, left: element.dancePos.left});
       letsDance(element);
     });
 
@@ -140,86 +141,38 @@ $(() => {
 
   }
 
-  function iteract (element) {
+  function dancersColission () {
 
     const maxDiff = 10;
 
-    const topp = $(element).offset().top + maxDiff;
-    const bottom = $(element).offset().top - maxDiff;
-    const left = $(element).offset().left - maxDiff;
-    const right = $(element).offset().left + maxDiff;
-
     const elements = $('.dancer').get();
+    elements.forEach( (element) => {
 
-    elements.forEach( (element2) => {
+      const topp = $(element).offset().top + maxDiff;
+      const bottom = $(element).offset().top - maxDiff;
+      const left = $(element).offset().left - maxDiff;
+      const right = $(element).offset().left + maxDiff;
 
-      if ( element != element2 ) {
-        
-        const coor = [ $(element2).offset().top, $(element2).offset().left ];
-      
-        if ( coor[0] <= topp && coor[0] >= bottom && coor[1] >= left && coor[1] <= right ) {
-          $(element).addClass('colission');
-          $(element2).addClass('colission');
-          $(element).stop();
-          $(element2).stop();
-          //$('#stage').append($(createLine(element, element2)));
+      elements.forEach( (element2) => {
+        if ( element != element2 ) {
+          const coor = [ $(element2).offset().top, $(element2).offset().left ];
+          if ( coor[0] <= topp && coor[0] >= bottom && coor[1] >= left && coor[1] <= right ) {
+            $(element).addClass('colission');
+            $(element2).addClass('colission');
+            $(element).stop();
+            $(element2).stop();
+          }
         }
-      }
-
+      });
     });
   }
 
  
   window.setInterval(function () {
-
-    if ( !stopDancing ) {
-
-      const elements = $('.dancer').get();
-
-      elements.forEach( (element) => {
-        iteract(element);
-      });
-    }
-
+    if ( !stopDancing ) dancersColission();
   }, 1);
 
-  //intervalID;
-
-  function createLine (el1, el2) {
-
-    var off1 = getElementProperty(el1);
-    var off2 = getElementProperty(el2);
-    // center of first point
-    var dx1 = off1.left + off1.width/2;
-    var dy1 = off1.top + off1.height/2;
-    // center of second point 
-    var dx2 = off2.left + off2.width/2;
-    var dy2 = off2.top + off1.height/2;
-    // distance
-    var length = Math.sqrt(((dx2-dx1) * (dx2-dx1)) + ((dy2-dy1) * (dy2-dy1)));
-    // center
-    var cx = ((dx1 + dx2) / 2) - (length / 2);
-    var cy = ((dy1 + dy2) / 2) - (2	 / 2);
-    // angle
-    var angle = Math.atan2((dy1-dy2),(dx1-dx2))*(180/Math.PI);
-    // draw line
-
-    return  `<section class="connectingLines" style="left:${cx}px; top:${cy}px; width:${length}px; -webkit-transform:rotate(${angle}deg); transform:rotate(${angle}deg);"></section>`;
-  }
   
-  function getElementProperty (el) {
-
-    var dx = 0;
-    var dy = 0;
-    var width = el.width() || 0;
-    var height = el.height() || 0;
-    
-    dx += el.position().left;
-    dy += el.position().top;
-    
-    return { top: dy, left: dx, width: width, height: height };
-
-  }
     
 
 });
