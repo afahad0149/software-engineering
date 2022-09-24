@@ -36,18 +36,30 @@ $(() => {
   }
 
   $('#regular').click( function () {
+
+    $('#dance').prop('disabled', false).removeClass('noHover');
+    
     const dancer = new Dancer();
     $('#stage').append( dancer.$node );
+    
   });
 
   $('#tapper').click( function () {
+
+    $('#dance').prop('disabled', false).removeClass('noHover');
+    
     const dancer = new Dancer();
     $('#stage').append( dancer.tapDancer() );
+    
   });
 
   $('#rainbow').click( function () {
+
+    $('#dance').prop('disabled', false).removeClass('noHover');
+    
     const dancer = new Dancer();
     $('#stage').append( dancer.rainbowDancer() );
+    
   });
 
   // Dance & Rest buttons
@@ -60,37 +72,43 @@ $(() => {
     $(selector).animate({ top: nh, left: nw }, 1000, function () { letsDance(selector); });
   }
 
-  let btnDance = false;
-  let btnRest = true;
+
+  $('#dance').prop('disabled', true).addClass('noHover');
+  $('#rest').prop('disabled', true).addClass('noHover');
 
   $('#dance').click( function () {
-    if ( !btnDance ) {
-      const elements = $('.dancer').get();
-      elements.forEach( (element) => {
-        element.startPos = $(element).offset();
-        if ( element.dancePos )
-          $(element).animate({top: element.dancePos.top-50, left: element.dancePos.left});
-        letsDance(element);
-      });
-      btnDance = true;
-      btnRest  = false;
-    }
+    
+    $('.btn').prop('disabled', true).addClass('noHover');
+    $('#rest').prop('disabled', false).removeClass('noHover');
+    $('#dance').addClass('activated');
+
+    const elements = $('.dancer').get();
+    elements.forEach( (element) => {
+      element.startPos = $(element).offset();
+      if ( element.dancePos )
+        $(element).animate({top: element.dancePos.top-50, left: element.dancePos.left});
+      letsDance(element);
+    });
+    
     dancersIteraction ();
+
   });
 
   $('#rest').click( function () {
-    if ( !btnRest ) {
-      const elements = $('.dancer').get();
-      elements.forEach( (element) => {
-        $(element).stop();
-        element.dancePos = $(element).offset();
-        $(element).animate({top: '97%'}).delay(200);
-        if ( element.startPos )
-          $(element).animate({top: element.startPos.top-50, left: element.startPos.left});
-      });
-      btnRest  = true;
-      btnDance = false;
-    }
+
+    $('.btn').prop('disabled', false).removeClass('noHover');
+    $('#dance').prop('disabled', false).removeClass('noHover');
+    $('#rest').addClass('activated');
+
+    const elements = $('.dancer').get();
+    elements.forEach( (element) => {
+      $(element).stop();
+      element.dancePos = $(element).offset();
+      $(element).animate({top: '97%'}).delay(200);
+      if ( element.startPos )
+        $(element).animate({top: element.startPos.top-50, left: element.startPos.left});
+    });
+    
   });
 
 
@@ -121,5 +139,8 @@ $(() => {
     $('.dancers-mean').animate({top: topAvg, left: leftAvg});
 
   }
+
+  //$('.btn').addClass('noHover');
+  //$('.btn').prop('disabled', true);
 
 });

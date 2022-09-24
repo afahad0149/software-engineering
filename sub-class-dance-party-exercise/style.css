@@ -14,10 +14,13 @@ header {
   color: #fff;
   display: flex;
   height: 50px;
-  justify-content: center;
+  justify-content: space-between;
+  padding-left: 25px;
+  padding-right: 25px;
 }
 
 .btn {
+  background-color: transparent;
   border: 1px solid #999;
   border-radius: 5%;
   color: #fff;
@@ -30,6 +33,17 @@ header {
   background-color: #fff;
   border-color: #fff;
   color: #333;
+}
+
+.noHover {
+  pointer-events: none;
+  color: #666;
+  border-color: #666;
+}
+
+.actived {
+  background-color: '#fff';
+  color: '#333';
 }
 
 #stage {
