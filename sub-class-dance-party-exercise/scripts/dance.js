@@ -61,7 +61,7 @@ $(() => {
   }
 
   let btnDance = false;
-  let btnRest = false;
+  let btnRest = true;
 
   $('#dance').click( function () {
     if ( !btnDance ) {
@@ -75,6 +75,7 @@ $(() => {
       btnDance = true;
       btnRest  = false;
     }
+    dancersIteraction ();
   });
 
   $('#rest').click( function () {
@@ -83,6 +84,7 @@ $(() => {
       elements.forEach( (element) => {
         $(element).stop();
         element.dancePos = $(element).offset();
+        $(element).animate({top: '97%'}).delay(200);
         if ( element.startPos )
           $(element).animate({top: element.startPos.top-50, left: element.startPos.left});
       });
@@ -90,5 +92,36 @@ $(() => {
       btnDance = false;
     }
   });
+
+
+  // Make dancer interact with each other
+
+  function dancersIteraction () {
+
+    const elements = $('.dancer').get();
+
+    let topPos  = [];
+    let leftPos = [];
+
+    elements.forEach( (element) => {
+      topPos.push($(element).offset().top);
+      leftPos.push($(element).offset().left);
+    });
+
+    const len = elements.length;
+    const topSum = topPos.reduce((a, b) => a + b, 0);
+    const topAvg = (topSum / len) || 0;
+
+    const leftSum = leftPos.reduce((a, b) => a + b, 0);
+    const leftAvg = (leftSum / len) || 0;
+
+    console.log(topAvg, leftAvg);
+
+    $('#stage').append($('<div class="dancers-mean"></div>')).css({height: '+=len', width: '+=len'});
+    $('.dancers-mean').animate({top: topAvg, left: leftAvg});
+
+  }
+
+0
 
 });

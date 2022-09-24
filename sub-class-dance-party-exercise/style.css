@@ -45,6 +45,14 @@ header {
   width: 15px;
 }
 
+.dancers-mean {
+  background-color: #000;
+  border-radius: 50%;
+  height: 25px;
+  position: absolute;
+  width: 25px;
+}
+
 @keyframes blinker {
   50% {
     opacity: 0;
