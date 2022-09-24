@@ -104,6 +104,6 @@ button:hover {
 }
 
 .activated {
-  background-color: yellow !important;
-  height: 15px!important;
+  background-color: #fff !important;
+  color: #333 !important;
 }

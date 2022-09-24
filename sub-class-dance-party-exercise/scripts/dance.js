@@ -75,6 +75,7 @@ $(() => {
   }
 
   $('#dance').prop('disabled', true).addClass('noHover');
+  $('#colission').prop('disabled', true).addClass('noHover');
   $('#rest').prop('disabled', true).addClass('noHover');
 
   $('#dance').click( function () {
@@ -83,6 +84,7 @@ $(() => {
     
     $('button').prop('disabled', true).addClass('noHover');
     $('#rest').prop('disabled', false).removeClass('noHover');
+    $('#colission').prop('disabled', false).removeClass('noHover');
 
     const elements = $('.dancer').get();
     elements.forEach( (element) => {
@@ -115,32 +117,6 @@ $(() => {
 
   // Make dancer interact with each other
 
-  function dancersIteraction () {
-
-    const elements = $('.dancer').get();
-
-    let topPos  = [];
-    let leftPos = [];
-
-    elements.forEach( (element) => {
-      topPos.push($(element).offset().top);
-      leftPos.push($(element).offset().left);
-    });
-
-    const len = elements.length;
-    const topSum = topPos.reduce((a, b) => a + b, 0);
-    const topAvg = (topSum / len) || 0;
-
-    const leftSum = leftPos.reduce((a, b) => a + b, 0);
-    const leftAvg = (leftSum / len) || 0;
-
-    console.log(topAvg, leftAvg);
-
-    $('#stage').append($('<div class="dancers-mean"></div>'));
-    $('.dancers-mean').animate({top: topAvg, left: leftAvg, height: '+='+len, width: '+='+len});
-
-  }
-
   function dancersColission () {
 
     const maxDiff = 10;
@@ -167,8 +143,22 @@ $(() => {
     });
   }
 
+  let makeColission = false;
+
+  $('#colission').click( function () {
+    
+    if ( makeColission ) {
+      $(this).removeClass('activated');
+      makeColission = false;
+    } else {
+      $(this).addClass('activated');
+      makeColission = true;
+    }
+
+  });
+
   window.setInterval(function () {
-    if ( !stopDancing ) dancersColission();
+    if ( !stopDancing && makeColission ) dancersColission();
   }, 1);
 
 });
