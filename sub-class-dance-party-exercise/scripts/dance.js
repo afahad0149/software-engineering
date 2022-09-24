@@ -167,12 +167,8 @@ $(() => {
     });
   }
 
- 
   window.setInterval(function () {
     if ( !stopDancing ) dancersColission();
   }, 1);
-
-  
-    
 
 });
