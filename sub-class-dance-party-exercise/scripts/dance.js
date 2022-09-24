@@ -36,42 +36,31 @@ $(() => {
   }
 
   $('#regular').click( function () {
-
     $('#dance').prop('disabled', false).removeClass('noHover');
-    
     const dancer = new Dancer();
     $('#stage').append( dancer.$node );
-    
   });
 
   $('#tapper').click( function () {
-
     $('#dance').prop('disabled', false).removeClass('noHover');
-    
     const dancer = new Dancer();
     $('#stage').append( dancer.tapDancer() );
-    
   });
 
   $('#rainbow').click( function () {
-
     $('#dance').prop('disabled', false).removeClass('noHover');
-    
     const dancer = new Dancer();
     $('#stage').append( dancer.rainbowDancer() );
-    
   });
 
   // Dance & Rest buttons
 
   function letsDance (element) {
-
     const h = $(window).height();
     const w = $(window).width();
     const nh = Math.floor(Math.random()*0.9 * h);
     const nw = Math.floor(Math.random()*0.9 * w);
     $(element).animate({ top: nh, left: nw }, 1500, function () { letsDance(element); });
-
   }
 
   $('#dance').prop('disabled', true).addClass('noHover');
@@ -81,7 +70,6 @@ $(() => {
   $('#dance').click( function () {
 
     stopDancing = false;
-    
     $('button').prop('disabled', true).addClass('noHover');
     $('#rest').prop('disabled', false).removeClass('noHover');
     $('#colission').prop('disabled', false).removeClass('noHover');
@@ -100,7 +88,6 @@ $(() => {
   $('#rest').click( function () {
 
     stopDancing = true;
-
     $('button').prop('disabled', false).removeClass('noHover');
     $('#rest').prop('disabled', true).addClass('noHover');
 
