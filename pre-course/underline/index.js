@@ -8,19 +8,19 @@ var _ = {};
 // If n is not provided it returns an array with just the first element.
 _.first = function (array, n) {
     
-    if (typeof array === 'object' && array !== null) {
-      array = (Array.from(array));
-    }
+  if (typeof array === 'object' && array !== null) {
+    array = (Array.from(array));
+  }
 
-    if (n > 0) {
-      return array.slice(0, n);
-    }
+  if (n > 0) {
+    return array.slice(0, n);
+  }
 
-    if (Array.isArray(array) === false) {
-      return [];
-    }
+  if (Array.isArray(array) === false) {
+    return [];
+  }
 
-    return [array[0]];
+  return [array[0]];
 
 };
 
