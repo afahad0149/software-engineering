@@ -1,0 +1,37 @@
+{
+  "name": "codeworks-the-polyglot-exercise",
+  "version": "2.1.2",
+  "description": "A Codeworks exercise to train students",
+  "main": "index.js",
+  "scripts": {
+    "test": "ruby ./code/highest-word-count.rb && python ./code/evented-thing.py -v"
+  },
+  "repository": {
+    "type": "git",
+    "url": "codeworks/the-polyglot-exercise"
+  },
+  "author": "Codeworks",
+  "license": "UNLICENSED",
+  "private": true,
+  "devDependencies": {
+    "cz-changelog": "^1.0.1",
+    "del": "^4.1.1",
+    "eslint": "^5.16.0",
+    "eslint-plugin-json": "^1.4.0",
+    "gulp": "^4.0.2",
+    "gulp-eslint": "^5.0.0",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-replace": "^1.0.0",
+    "husky": "2.3.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "gulp lint"
+    }
+  }
+}
