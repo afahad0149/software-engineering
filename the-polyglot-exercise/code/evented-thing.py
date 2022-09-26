@@ -20,7 +20,6 @@ class EventedThing:
     def on (self, event, callback):
         self.events[event] = callback
 
-
     def trigger(self, event, *args):
         if (self.events[event]):
             return self.events[event](args)
