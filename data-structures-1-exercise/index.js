@@ -34,9 +34,8 @@ function Queue () {
 }
 
 Queue.prototype.enqueue = function (value) {
-  for (let i = this.length; i > 0; i--) {
+  for (let i = this.length; i > 0; i--)
     this.storage[i] = this.storage[i-1];
-  }
   this.storage[0] = value;
   this.length++;
   return true;
@@ -44,9 +43,7 @@ Queue.prototype.enqueue = function (value) {
 
 Queue.prototype.dequeue = new Stack().pop;
 
-Queue.prototype.size = function () {
-  return this.length;
-};
+Queue.prototype.size =  new Stack().size;
 
 // Linked list
 
