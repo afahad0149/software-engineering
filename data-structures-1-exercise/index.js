@@ -111,10 +111,6 @@ LinkedList.prototype.contains = function (value) {
 
 class DoubleLinkedList extends LinkedList {
 
-  constructor () {
-    super();
-  }
-
   addPrevious () {
     this.nodes[0].previous = null;
     for (let i = 1; i < this.length; i++) {
