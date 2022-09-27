@@ -21,12 +21,14 @@ class EventedThing:
         self.events[event] = callback
 
     def trigger(self, event, *args):
-        if (self.events[event]):
-            return self.events[event](args)
+        try:
+            return self.events[event](*args)
+        except:
+            pass
 
 
 eventedThing = EventedThing()
 
-eventedThing.on('Hi', lambda name: print('Hello '+name[0]) )
+eventedThing.on('Hi', lambda name: print('Hello '+name) )
 
 eventedThing.trigger('Hi', 'Sarah')
