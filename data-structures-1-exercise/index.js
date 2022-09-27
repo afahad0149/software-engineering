@@ -34,8 +34,9 @@ function Queue () {
 }
 
 Queue.prototype.enqueue = function (value) {
-  for (let i = this.length; i > 0; i--)
-  { this.storage[i] = this.storage[i-1]; }
+  for (let i = this.length; i > 0; i--) { 
+    this.storage[i] = this.storage[i-1]; 
+  }
   this.storage[0] = value;
   this.length++;
   return true;
