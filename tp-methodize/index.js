@@ -11,8 +11,8 @@
 // (3).add(5) -> 8
 
 function methodize (func) {
-  return function (a) {
-    return func(this, a);
+  return function (...a) {
+    return func(this, ...a);
   };
 }
 
