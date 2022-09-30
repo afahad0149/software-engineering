@@ -12,12 +12,12 @@
 
 function circularDetector (head) {
   if (head == null) return true;
-  let curr = head;
-  let next = head.next;
-  while (curr != next) {
-    if (!next || !next.next) return false;
-    curr = curr.next;
-    next = next.next.next;
+  let slow = head;
+  let fast = head.next;
+  while (slow != fast) {
+    if (!fast || !fast.next) return false;
+    slow = slow.next;
+    fast = fast.next.next;
   }
   return true;
 }
