@@ -12,38 +12,29 @@ class HashTable {
 
   constructor (size) {
     this.size = size;
-  }
-
-  _hash (key) {
-    let hash = 0;
-    for (let i = 0; i < key.length; i++) {
-      hash += key.charCodeAt(i);
-    }
-    return hash;
+    this.storage = Storage(size);
   }
 
   insert (key, value) {
-    const index = this._hash(key);
-    this[index] = value;
+    const index = hash(key, key.length)/10;
+    this.storage.set(index, value);
     this.size++;
     return true;
   }
 
   retrieve (key) {
-    const index = this._hash(key);
-    return this[index];
+    const index = hash(key, key.length)/10;
+    return this.storage.get(index);
   }
 
   remove (key) {
-    const index = this._hash(key);
-    if (this[index] && this[index].length) {
-      this[index] = undefined;
-      this.size--;
+    const index = hash(key, key.length)/10;
+    if (this.storage.get(index)) {
+      this.storage.set(index, undefined);
       return true;
     }
     return false;
   }
 }
-
 
 module.exports = HashTable;
