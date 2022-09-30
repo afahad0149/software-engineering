@@ -14,7 +14,15 @@ class HashTable {
     this.size = size;
     this.storage = Storage(size);
   }
-
+  /*
+  hashGen (key) {
+    let hash = 0;
+    for (let i = 0; i < key.length; i++) {
+      hash += key.charCodeAt(i);
+    }
+    return hash;
+  }
+  */
   insert (key, value) {
     const index = hash(key, key.length)/10;
     this.storage.set(index, value);
