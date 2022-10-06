@@ -1,0 +1,42 @@
+{
+  "name": "codeworks-chat-client-exercise",
+  "version": "1.6.2",
+  "description": "A Codeworks exercise to train students",
+  "main": "script.js",
+  "repository": {
+    "type": "git",
+    "url": "codeworks/chat-client-exercise"
+  },
+  "author": "Codeworks",
+  "license": "UNLICENSED",
+  "private": true,
+  "devDependencies": {
+    "browser-sync": "^2.26.14",
+    "cz-changelog": "^1.0.1",
+    "del": "^6.0.0",
+    "eslint": "^7.28.0",
+    "eslint-plugin-json": "^3.0.0",
+    "gulp": "4.0.2",
+    "gulp-eslint": "^6.0.0",
+    "gulp-html-lint": "0.0.2",
+    "gulp-load-plugins": "^2.0.7",
+    "gulp-replace": "^1.1.3",
+    "gulp-stylelint": "^13.0.0",
+    "gulp-util": "3.0.8",
+    "husky": "^6.0.0",
+    "stylelint": "^13.13.1",
+    "stylelint-config-standard": "^22.0.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-changelog"
+    }
+  },
+  "scripts": {
+    "precommit": "gulp lint",
+    "test": "echo \"No test specified\""
+  },
+  "dependencies": {
+    "jquery": "^3.6.1"
+  }
+}
