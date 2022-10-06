@@ -15,7 +15,6 @@
 // (because 7 + 8 + 4 = 19, and 6 + 8 + 23 = 37, hence 19 - 37 = 18).
 
 function diagonalDifference (matrix) {
-
   matrix = matrix.split('\n');
   matrix.forEach((row, i, arr) => arr[i] = row.split(',')); 
   const n = matrix.length;
