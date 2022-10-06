@@ -12,8 +12,8 @@
 // check out the Sieve of Eratosthenes, or the Sieve of Atkin on Wikipedia.
 
 function primeTester (n) {
-  for(let i = 2, s = Math.sqrt(n); i <= s; i++) {
-    if(n % i === 0) 
+  for (let i = 2, s = Math.sqrt(n); i <= s; i++) {
+    if (n % i === 0) 
       return false; 
   }
   return n > 1;
@@ -23,7 +23,7 @@ function primeList (start, end) {
   const arr = [];
   for (let n = start; n <= end; n++) {
     if (primeTester(n)) 
-      arr.push(n)
+      arr.push(n);
   }
   return arr;
 }
