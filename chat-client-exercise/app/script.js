@@ -44,8 +44,7 @@ class Message {
 }
 
 function getAgo (timeStamp) {
-  const date = new Date(Date.now());
-  const now = date.getTime();
+  const now = new Date().getTime();
   const time = now - timeStamp;
   if ( time < 6e4 ) { // < 1 min
     return 'now';
