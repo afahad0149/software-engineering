@@ -1,7 +1,5 @@
 'use strict';
 
-const { parallel } = require("gulp");
-
 // Weekly assessment 3 (1 hour)
 
 // Start with the exercises in this file, then answer the questions
@@ -22,9 +20,9 @@ function longestPalindrome (str) {
   str = str.toLowerCase(); 
   let len = 0;
   let pal = '';
-  for(let i = 0; i < str.length; i++) {
+  for (let i = 0; i < str.length; i++) {
     const str2 = str.substr(i, str.length);
-    for(let j = str.length+1; j > 0; j--) {
+    for (let j = str.length+1; j > 0; j--) {
       const str3 = str2.substr(0, j);
       if (str3.length <= 1)
         continue;
