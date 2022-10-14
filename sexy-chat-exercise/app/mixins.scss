@@ -1,0 +1,26 @@
+@mixin flex-declaration ($direction: row) {
+  display: flex;
+  flex-direction: $direction;
+}
+
+@mixin message ($sent: false) {
+  color: $text-color;
+  font-family: $fonts;
+  width: 40%;
+  height: auto;
+  padding: 1em;
+  @if $sent {
+    border-radius: 10px 10px 0 10px;
+    background-color: $msg-sent-bg;
+    align-self: flex-end;
+  } @else {
+    border-radius: 10px 10px 10px 0;
+    background-color: $msg-received-bg;
+    align-self: flex-start;
+  }
+}
+
+@mixin no-border {
+  outline: none;
+  border: none;
+}

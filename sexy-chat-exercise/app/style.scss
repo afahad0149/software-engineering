@@ -1,0 +1,51 @@
+@import './constants.scss';
+@import './mixins.scss';
+
+.container {
+  height: $screen-height;
+  background-image: $background-img;
+  @include flex-declaration(column);
+  .chat-container {
+    height: 90%;
+    padding: 1em;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    .text-box {
+      width: 100%;
+      margin-bottom: 1em; background-image: $background-img;
+      @include flex-declaration(column);
+      .message-sent {
+        @include message(true);
+      }
+      .message-received {
+        @include message();
+      }
+    }
+  }
+  .input-container {
+    height: 10%;
+    width: 100%;
+    form {
+      @include flex-declaration();
+      height: 100%;
+      input {
+        @include no-border;
+        background: $input-bg;
+        color: $text-color;
+        width: 90%;
+        border-radius: 20px 0 0 20px;
+        font-family: $fonts;
+        font-size:large;
+        padding-left: 1em;
+      }
+      button {
+        @include no-border;
+        background: $input-bg;
+        color: $text-color;
+        border-radius:0 20px 20px 0;
+        width: 10%;
+        cursor: pointer;
+      }
+    }
+  }
+}
