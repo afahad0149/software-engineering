@@ -1,0 +1,35 @@
+{
+  "name": "codeworks-tp-counterfeiter",
+  "version": "1.0.2",
+  "description": "A Codeworks exercise to train students",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "codeworks/tp-counterfeiter"
+  },
+  "scripts": {
+    "pre-commit": "gulp lint"
+  },
+  "author": "Codeworks",
+  "license": "UNLICENSED",
+  "private": true,
+  "devDependencies": {
+    "browser-sync": "^2.26.14",
+    "cz-changelog": "^1.0.1",
+    "eslint": "^7.24.0",
+    "eslint-plugin-json": "^2.1.2",
+    "gulp": "^4.0.2",
+    "gulp-eslint": "^6.0.0",
+    "gulp-htmllint": "0.0.19",
+    "gulp-load-plugins": "^2.0.6",
+    "gulp-stylelint": "^13.0.0",
+    "husky": "^6.0.0",
+    "stylelint": "^13.12.0",
+    "stylelint-config-standard": "^21.0.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-changelog"
+    }
+  }
+}

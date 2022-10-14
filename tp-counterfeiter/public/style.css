@@ -1,0 +1,76 @@
+/* Add your CSS here */
+body {
+  font-family: 'Inter';font-size: 22px;
+}
+
+header {
+  display: flex;
+  border-bottom: 1px solid rgb(223, 223, 223);
+
+  max-height: 60px;
+  height: 60px;
+
+}
+
+#logo {
+  width: 125px;
+  margin-left: 40px;
+}
+
+#search {
+  height: 40px;
+  margin-top: 5px;
+}
+
+#right-bar {
+  height: 50px;
+  margin-left: 60px;
+  margin-top:-2px;
+}
+
+#main {
+  width: 100%;
+
+}
+
+.header-right {
+  margin-left: 1200px;
+  align-items: flex-end;
+  justify-content: flex-end;
+  margin-top: 3px;
+  align-items: right;
+  font-size: 16px;
+  font-weight: 600;
+
+
+}
+
+/* menu */
+
+ul {
+  list-style:none;
+  margin:0;
+  padding-right:10px;
+ }
+ 
+
+ 
+ ul a {
+  display:block;
+  color: #213547;
+  text-decoration:none;
+  padding:10px;
+  letter-spacing:0.5px;
+ }
+ 
+ 
+ ul li {
+  position:relative;
+  float:left;
+  margin:0;
+  padding:0;
+ }
+  
+li:hover {
+  color:#5FD392 !important;
+}
