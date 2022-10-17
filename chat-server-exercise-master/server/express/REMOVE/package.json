@@ -1,0 +1,12 @@
+{
+  "name": "codeworks-chat-server-express",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "Codeworks",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
