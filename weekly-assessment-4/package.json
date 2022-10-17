@@ -1,0 +1,49 @@
+{
+  "name": "codeworks-weekly-assessment-4",
+  "version": "1.2.0",
+  "description": "A Codeworks weekly assessment for students",
+  "main": "index.js",
+  "scripts": {
+    "install": "cd server && npm i .",
+    "precommit": "cd server && gulp lint",
+    "test": "mocha --exit",
+    "test:ci": "mocha test --reporter mocha-junit-reporter --exit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codeworks/weekly-assessment-4.git"
+  },
+  "author": "Codeworks",
+  "license": "UNLICENSED",
+  "private": true,
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "cz-changelog": "^1.0.1",
+    "del": "^6.0.0",
+    "eslint": "^7.28.0",
+    "eslint-plugin-json": "^3.0.0",
+    "gulp": "^4.0.2",
+    "gulp-eslint": "^6.0.0",
+    "gulp-load-plugins": "^2.0.7",
+    "gulp-replace": "^1.1.3",
+    "husky": "^6.0.0",
+    "mocha": "^9.0.0",
+    "mocha-junit-reporter": "^2.0.2",
+    "request": "^2.88.0",
+    "request-promise-native": "^1.0.7"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-changelog"
+    }
+  },
+  "bugs": {
+    "url": "https://github.com/codeworks/weekly-assessment-4/issues"
+  },
+  "homepage": "https://github.com/codeworks/weekly-assessment-4#readme",
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run precommit"
+    }
+  }
+}
