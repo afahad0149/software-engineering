@@ -1,0 +1,77 @@
+{
+  "bands": [
+    {
+      "name": "Iron Maiden",
+      "members": 6,
+      "genre": "heavy metal",
+      "formed": 1975
+    },
+    {
+      "name": "Arctic Monkeys",
+      "members": 4,
+      "genre": "indie",
+      "formed": 2002
+    }
+  ],
+  "soloArtists": [
+    { "name": "Adele", "genre": "pop", "born": 1988 },
+    { "name": "Céline Dion", "genre": "pop", "born": 1968 }
+  ],
+  "artists": [
+    {
+      "name": "Iron Maiden",
+      "members": 6,
+      "genre": "heavy metal",
+      "formed": 1975
+    },
+    {
+      "name": "Arctic Monkeys",
+      "members": 4,
+      "genre": "indie",
+      "formed": 2002
+    },
+    { "name": "Adele", "genre": "pop", "born": 1988 },
+    { "name": "Céline Dion", "genre": "pop", "born": 1968 }
+  ],
+  "artistsWithSongs": [
+    {
+      "name": "Metallica",
+      "genre": "thrash metal",
+      "formed": 1981,
+      "members": 4,
+      "songs": [
+        { "title": "One", "durationSeconds": 446 },
+        { "title": "Fight Fire with Fire", "durationSeconds": 284 },
+        { "title": "Motorbreath", "durationSeconds": 188 },
+        { "title": "Enter Sandman", "durationSeconds": 331 }
+      ]
+    },
+    {
+      "name": "Iron Maiden",
+      "members": 6,
+      "genre": "heavy metal",
+      "formed": 1975,
+      "songs": [
+        { "title": "Hallowed Be Thy Name", "durationSeconds": 428 }
+      ]
+    },
+    {
+      "name": "Adele",
+      "genre": "pop",
+      "born": 1988,
+      "songs": [
+        { "title": "Someone like you", "durationSeconds": 285 },
+        { "title": "Set fire to the rain", "durationSeconds": 242 }
+      ]
+    },
+    {
+      "name": "Céline Dion",
+      "genre": "pop",
+      "born": 1988,
+      "songs": [
+        { "title": "Best of all", "durationSeconds": 203 },
+        { "title": "Retiens-moi", "durationSeconds": 242 }
+      ]
+    }
+  ]
+}

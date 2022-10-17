@@ -1,0 +1,35 @@
+{
+  "name": "codeworks-typescript-music-exercise",
+  "version": "1.0.1",
+  "description": "A Codeworks exercise to train students",
+  "main": "index.js",
+  "scripts": {
+    "test:1": "tsc test/exercise-1.type-tests.ts --noEmit && jest test/exercise-1.test.ts",
+    "test:2": "tsc test/exercise-2.type-tests.ts --noEmit && jest test/exercise-2.test.ts",
+    "test:3": "tsc test/exercise-3.type-tests.ts --noEmit && jest test/exercise-3.test.ts",
+    "test:4": "tsc test/exercise-4.type-tests.ts --noEmit",
+    "test": "npm run test:1 && npm run test:2 && npm run test:3 && npm run test:4",
+    "build": "tsc",
+    "dev": "tsc --watch"
+  },
+  "author": "Codeworks",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@types/jest": "^27.5.0",
+    "@typescript-eslint/eslint-plugin": "^5.22.0",
+    "@typescript-eslint/parser": "^5.22.0",
+    "del": "^6.0.0",
+    "eslint": "^8.15.0",
+    "eslint-plugin-json": "^3.1.0",
+    "gulp": "^4.0.2",
+    "gulp-eslint": "^6.0.0",
+    "gulp-load-plugins": "^2.0.7",
+    "gulp-replace": "^1.1.3",
+    "jest": "^28.0.3",
+    "ts-jest": "^28.0.1",
+    "typescript": "^4.6.4"
+  },
+  "dependencies": {
+    "node-fetch": "^3.2.4"
+  }
+}
