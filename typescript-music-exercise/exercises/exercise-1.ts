@@ -35,7 +35,7 @@ function sum (a: number, b: number) {
 function titleCase (str: string) {
   const words = str.split(' ') || [str];
   let ret = '';
-  for( let word of words)
+  for(const word of words)
     ret += word[0].toUpperCase() + word.slice(1).toLowerCase() + ' ';
   return ret.slice(0, -1); // delete last space
 }

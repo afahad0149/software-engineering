@@ -39,4 +39,29 @@ to manipulate them safely.
 //      describeArtist(ironMaiden) === describeBand(ironMaiden) // true
 //      describeArtist(adele) === describeSoloArtist(adele) // true
 
+import { titleCase } from "./exercise-1";
+
+type Band = { name: string, members: number, genre: string, formed: number }
+
+function describeBand (band: Band) {
+  return `${titleCase(band.name)} are a ${titleCase(band.genre)} band with ${band.members} members, formed in ${band.formed}.`;
+}
+
+type SoloArtist = { name: string, genre: string, born: number };
+
+function describeSoloArtist (artist: SoloArtist) {
+  return `${titleCase(artist.name)} is a ${titleCase(artist.genre)} artist, born in ${artist.born}.`;
+}
+
+type Artist = Band | SoloArtist;
+
+function describeArtist (artist: Artist) {
+  const artistBand = artist as Band;
+  const artistSolo = artist as SoloArtist;
+  if (artistBand.members != undefined)
+    return describeBand(artistBand);
+  else
+    return describeSoloArtist(artistSolo);
+}
+
 export { describeBand, describeSoloArtist, describeArtist };

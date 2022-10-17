@@ -27,6 +27,18 @@ We can join types together in other ways too.
 //    the most songs. TypeScript can really help when dealing with deeply
 //    nested properties and manipulating complex objects and arrays.
 
+function getNumberOfSongs () {
+  return 0;
+}
+
+function getNumberOfLongSongs () { 
+  return 0;
+}
+
+function getArtistWithMostSongs () {
+  return 0;
+}
+
 export {
   getNumberOfSongs,
   getNumberOfLongSongs,
