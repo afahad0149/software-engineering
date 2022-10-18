@@ -64,4 +64,4 @@ function describeArtist (artist: Artist) {
     return describeSoloArtist(artistSolo);
 }
 
-export { describeBand, describeSoloArtist, describeArtist };
+export { describeBand, describeSoloArtist, describeArtist, Artist };

@@ -1,5 +1,3 @@
-import fetch from 'node-fetch';
-
 /*
 As you’ve seen, TypeScript can infer many things about your code. It can 
 tell you when you’ve used the wrong argument types, or if your function
@@ -32,5 +30,41 @@ test command.
 
 // 3. Try to refactor your code so there is no duplication with the
 //    fetchArtists function.
+
+import fetch from 'node-fetch';
+import { ArtistWithSongs } from './exercise-3';
+
+const apiBaseUrl = 'https://cw-music-api.herokuapp.com';
+
+async function apiClient<T>(endpoint: string): Promise<T> {
+  const response = await fetch(`${apiBaseUrl}/${endpoint}`);
+  if (response.ok) {
+    return response.json() as unknown as T;
+  }
+  return Promise.reject(new Error('something went wrong'));
+}
+
+function fetchArtists(): Promise<ArtistWithSongs[]> {
+  return apiClient<ArtistWithSongs[]>('artists');
+}
+
+console.log(fetchArtists());
+
+type Album = {
+  artist: string;
+  title: string;
+  released: number;
+};
+
+type ArtistWithAlbums = ArtistWithSongs & { albums: Album[]; };
+
+async function fetchArtistsWithAlbums(): Promise<ArtistWithAlbums[]> {
+  const artists = await fetchArtists();
+  const albums = await apiClient<Album[]>('albums');
+  return artists.map((artist) => ({
+    ...artist,
+    albums: albums.filter((album) => album.artist === artist.name)
+  }));
+}
 
 export { fetchArtists, fetchArtistsWithAlbums };

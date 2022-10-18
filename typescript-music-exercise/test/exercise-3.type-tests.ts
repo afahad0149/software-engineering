@@ -17,8 +17,5 @@ typeAssert<
 >();
 
 typeAssert<
-  IsTypeEqual<
-    (artists: ArtistWithSongs[]) => ArtistWithSongs,
-    typeof getArtistWithMostSongs
-  >
+  IsTypeEqual<(artists: ArtistWithSongs[]) => ArtistWithSongs, typeof getArtistWithMostSongs>
 >();
