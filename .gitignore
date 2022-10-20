@@ -1,6 +1,9 @@
 .DS_Store
 package-lock.json
 
+
+*.mp4
+
 # Logs
 logs
 *.log
