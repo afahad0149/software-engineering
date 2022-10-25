@@ -1,0 +1,42 @@
+<div class="list-container">
+  <form
+    [formGroup]="typeSelectForm"
+    (ngSubmit)="onSelectType()"
+    class="right-corner"
+  >
+    <select
+      (change)="changeType($event)"
+      formControlName="typeName"
+      class="dropdown"
+    >
+      <option value="">all types</option>
+      <option *ngFor="let type of types" [ngValue]="type">
+        {{ type.identifier }}
+      </option>
+    </select>
+  </form>
+  <div class="pokemonList">
+    <div *ngFor="let poke of pokemon" class="card">
+      <div class="front face">
+        <button class="wishlist-button" (click)="this.onFave(poke.id)">
+          <i class="wishlist-button-text">{{ this.isFave(poke.id) }}</i>
+        </button>
+        <a routerLink="/pokemon/{{ poke.id }}" class="poke-data">
+          <div class="id">#{{ poke.id }}</div>
+          <img src="{{ poke.front_pic }}" alt="pokemon card" />
+          <div class="name">{{ poke.name }}</div>
+        </a>
+      </div>
+      <div class="back face">
+        <button class="wishlist-button" (click)="this.onFave(poke.id)">
+          <i class="wishlist-button-text">{{ this.isFave(poke.id) }}</i>
+        </button>
+        <a routerLink="/pokemon/{{ poke.id }}" class="poke-data">
+          <div class="id">#{{ poke.id }}</div>
+          <img src="{{ poke.back_pic }}" alt="pokemon card" />
+          <div class="name">{{ poke.name }}</div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

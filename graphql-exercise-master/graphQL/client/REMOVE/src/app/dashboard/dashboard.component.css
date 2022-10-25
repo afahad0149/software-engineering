@@ -1,0 +1,35 @@
+.links-container {
+  margin-top: 40px;
+  display: flex;
+  padding-left: 30px;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+}
+
+button {
+  width: 150px;
+  padding: 10px;
+  margin: 0 10px;
+  font-size: large;
+  font-family: Roboto;
+  background-color: white;
+  border: white;
+  border-bottom: 2px solid white;
+}
+
+button:hover {
+  background-color: #3db91b;
+  color: white;
+  border-bottom: 2px solid #3db91b;
+}
+
+.active {
+  border-bottom: 2px solid #3db91b;
+}
+
+.dashboard {
+  max-width: 1100;
+  min-width: 450px;
+  margin: auto;
+}

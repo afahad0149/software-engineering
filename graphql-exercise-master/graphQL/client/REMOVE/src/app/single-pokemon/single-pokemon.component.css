@@ -1,0 +1,101 @@
+.container {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  height: 180px;
+}
+
+.bgPokemon {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 160px;
+  border-radius: 50%;
+}
+
+img {
+  margin: 60px auto;
+  transform: scale(1.5);
+}
+
+.id {
+  position: absolute;
+  top: 40px;
+  z-index: 0;
+  font-size: 30em;
+  opacity: 0.2;
+  font-weight: 800;
+  background: none;
+}
+
+.name {
+  z-index: 3;
+  font-size: 3em;
+  color: #555;
+  font-weight: 700;
+  margin: 10px;
+  margin-bottom: 50px;
+  font-family: Roboto;
+  letter-spacing: 3px;
+}
+
+h2 {
+  z-index: 3;
+  font-size: 2em;
+  color: #555;
+  font-weight: 500;
+  margin: 0.5em;
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  font-family: Roboto;
+}
+
+button {
+  cursor: pointer;
+  z-index: 4;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  background-color: #3db91b;
+  font-size: 1.2em;
+  margin: 50px;
+  color: white;
+  font-weight: 500;
+}
+
+.list {
+  max-width: 600px;
+  padding: 0;
+}
+
+.list-item {
+  list-style: none;
+  display: inline;
+  font-variant: small-caps;
+  font-size: 18px;
+}
+
+.list-item:not(:last-child):after {
+  content: "~";
+  padding: 0 8px;
+}
+
+.types {
+  font-size: 24px;
+}
+
+.moves {
+  line-height: 1.5;
+}

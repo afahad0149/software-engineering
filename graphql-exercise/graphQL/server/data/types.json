@@ -1,0 +1,139 @@
+[
+  {
+    "_id": "6245878b063150e63ba0d920",
+    "id": "1",
+    "identifier": "normal",
+    "generation_id": "1",
+    "damage_class_id": "2"
+  },
+  {
+    "_id": "6245878b063150e63ba0d921",
+    "id": "2",
+    "identifier": "fighting",
+    "generation_id": "1",
+    "damage_class_id": "2"
+  },
+  {
+    "_id": "6245878b063150e63ba0d922",
+    "id": "3",
+    "identifier": "flying",
+    "generation_id": "1",
+    "damage_class_id": "2"
+  },
+  {
+    "_id": "6245878b063150e63ba0d923",
+    "id": "4",
+    "identifier": "poison",
+    "generation_id": "1",
+    "damage_class_id": "2"
+  },
+  {
+    "_id": "6245878b063150e63ba0d924",
+    "id": "5",
+    "identifier": "ground",
+    "generation_id": "1",
+    "damage_class_id": "2"
+  },
+  {
+    "_id": "6245878b063150e63ba0d925",
+    "id": "6",
+    "identifier": "rock",
+    "generation_id": "1",
+    "damage_class_id": "2"
+  },
+  {
+    "_id": "6245878b063150e63ba0d926",
+    "id": "7",
+    "identifier": "bug",
+    "generation_id": "1",
+    "damage_class_id": "2"
+  },
+  {
+    "_id": "6245878b063150e63ba0d927",
+    "id": "8",
+    "identifier": "ghost",
+    "generation_id": "1",
+    "damage_class_id": "2"
+  },
+  {
+    "_id": "6245878b063150e63ba0d928",
+    "id": "9",
+    "identifier": "steel",
+    "generation_id": "2",
+    "damage_class_id": "2"
+  },
+  {
+    "_id": "6245878b063150e63ba0d929",
+    "id": "10",
+    "identifier": "fire",
+    "generation_id": "1",
+    "damage_class_id": "3"
+  },
+  {
+    "_id": "6245878b063150e63ba0d92a",
+    "id": "11",
+    "identifier": "water",
+    "generation_id": "1",
+    "damage_class_id": "3"
+  },
+  {
+    "_id": "6245878b063150e63ba0d92b",
+    "id": "12",
+    "identifier": "grass",
+    "generation_id": "1",
+    "damage_class_id": "3"
+  },
+  {
+    "_id": "6245878b063150e63ba0d92c",
+    "id": "13",
+    "identifier": "electric",
+    "generation_id": "1",
+    "damage_class_id": "3"
+  },
+  {
+    "_id": "6245878b063150e63ba0d92d",
+    "id": "14",
+    "identifier": "psychic",
+    "generation_id": "1",
+    "damage_class_id": "3"
+  },
+  {
+    "_id": "6245878b063150e63ba0d92e",
+    "id": "15",
+    "identifier": "ice",
+    "generation_id": "1",
+    "damage_class_id": "3"
+  },
+  {
+    "_id": "6245878b063150e63ba0d92f",
+    "id": "16",
+    "identifier": "dragon",
+    "generation_id": "1",
+    "damage_class_id": "3"
+  },
+  {
+    "_id": "6245878b063150e63ba0d930",
+    "id": "17",
+    "identifier": "dark",
+    "generation_id": "2",
+    "damage_class_id": "3"
+  },
+  {
+    "_id": "6245878b063150e63ba0d931",
+    "id": "18",
+    "identifier": "fairy",
+    "generation_id": "6"
+  },
+  {
+    "_id": "6245878b063150e63ba0d932",
+    "id": "10001",
+    "identifier": "unknown",
+    "generation_id": "2"
+  },
+  {
+    "_id": "6245878b063150e63ba0d933",
+    "id": "10002",
+    "identifier": "shadow",
+    "generation_id": "3"
+  }
+]

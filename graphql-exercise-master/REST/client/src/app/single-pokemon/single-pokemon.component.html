@@ -1,0 +1,24 @@
+<h1 *ngIf="!show" class="container">Loading...</h1>
+<div *ngIf="show" class="container">
+  <div class="name">{{ pokemon?.name }}</div>
+  <div class="bgPokemon">
+    <img src="{{ pokemon?.front_pic }}" alt="pokemon card" />
+  </div>
+  <div class="id">#{{ pokemon?.id }}</div>
+</div>
+<div class="meta">
+  <h2 *ngIf="types.length">Types:</h2>
+  <ul class="list">
+    <li *ngFor="let type of types" class="list-item types">
+      {{ type.identifier.split("-").join(" ") }}
+    </li>
+  </ul>
+  <h2 *ngIf="types.length">Moves:</h2>
+  <ul class="list">
+    <li *ngFor="let move of moves" class="list-item moves">
+      {{ move.identifier.split("-").join(" ") }}
+    </li>
+  </ul>
+
+  <button routerLink="/" type="button" name="back">back to the list</button>
+</div>

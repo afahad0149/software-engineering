@@ -1,0 +1,12 @@
+<div class="dashboard">
+  <div class="links-container">
+    <button
+      *ngFor="let tab of tabs"
+      (click)="selectTab(tab.name)"
+      [ngClass]="{ active: tab.active }"
+      >
+      {{ tab.name | titlecase }}
+    </button>
+  </div>
+  <app-pokemon-list [selectedView]="this.selectedView"></app-pokemon-list>
+</div>
