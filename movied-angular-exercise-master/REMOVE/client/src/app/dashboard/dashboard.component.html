@@ -1,0 +1,12 @@
+<div>
+  <section>
+    <h1>BOX OFFICE</h1>
+    <app-movie-list type="discover" [movies]="discoverMovies"></app-movie-list>
+  </section>
+  <section>
+    <select [(ngModel)]="selectedCategory" (ngModelChange)="getCategoryMovies()">
+      <option [ngValue]="cat" *ngFor="let cat of categories">{{cat.name}}</option>
+    </select>
+    <app-movie-list *ngIf="selectedCategory" [movies]="categoryMovies"></app-movie-list>
+  </section>
+</div>

@@ -1,0 +1,28 @@
+@import '../../colors';
+
+div {
+  margin-top: 70px;
+}
+
+h1 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+select {
+  width: 15%;
+  min-width: 270px;
+  margin: 20px 0;
+  padding: 10px;
+  line-height: 30px;
+  background-color: $background;
+  border: none;
+  color: White;
+  outline: none;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+section:first-of-type {
+  margin-top: 150px;
+}

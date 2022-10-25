@@ -1,0 +1,19 @@
+<div *ngIf="movie">
+  <section id='main-info'>
+    <div class="container">
+      <img id="poster" [src]="movie.posterURL()" />
+      <div>
+        <h1>{{movie.title}}</h1>
+        <h2>{{movie.tagline}}</h2>
+        <p class="company"><label>Company: </label><span>{{movie.production_company}}</span></p>
+        <p class="genre"><label>Genre: </label><span>{{movie.genre}}</span></p>
+        <ngb-rating [rate]="rating" [max]="5" [readonly]="true"></ngb-rating>
+      </div>
+    </div>
+  </section>
+  <div class="container">
+    <section>
+      <p>{{movie.overview}}</p>
+    </section>
+  </div>
+</div>

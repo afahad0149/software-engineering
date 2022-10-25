@@ -1,0 +1,6 @@
+<div>
+  <input id="search-field" (keyup)="onKey($event)" type="" name="search" placeholder="Search a movie..." autocomplete="off">
+  <div *ngIf="searchMovies.length" class="list">
+    <app-movie-list [movies]="searchMovies"></app-movie-list>
+  </div>
+</div>

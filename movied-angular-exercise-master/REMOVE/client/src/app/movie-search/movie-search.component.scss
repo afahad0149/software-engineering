@@ -1,0 +1,41 @@
+@import '../../colors.scss';
+
+div {
+  width: 25%;
+  min-width: 270px;
+  height: 70px;
+  margin: 0 auto;
+  padding: 0 15px;
+  float: right;
+}
+
+input {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  line-height: 30px;
+  font-size: 20px;
+  background-color: $background;
+  border: none;
+  color: $primary;
+  outline: none;
+}
+
+input::placeholder {
+  color: $primary;
+  opacity: .5;
+}
+
+.list {
+  position: fixed;
+  right: 15px;
+  width: 40%;
+  min-width: 280px;
+  height: auto;
+  padding: 15px;
+  border-left: 30px solid $background-dark;
+  border-right: 30px solid $background-dark;
+  background-color: $background-dark;
+  transition: all 1s ease;
+  box-shadow: 0 10px 12px 3px #111C;
+}

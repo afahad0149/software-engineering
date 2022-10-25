@@ -1,0 +1,56 @@
+@import '../../colors.scss';
+@import '../constants.scss';
+
+div {
+  margin-top: 70px;
+}
+
+#main-info{
+  background-color: $background-light;
+  margin: -$container-padding;
+  margin-bottom: 20px;
+  padding: $container-padding;
+
+  div.container{
+    display: flex;
+    flex-direction: row;
+  }
+  h1 {
+    font-size: 4.5rem;
+    font-weight: 600;
+    margin-bottom: -10px;
+  }
+  h2, p label{
+    color: $text-dark;
+  }
+  h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+  }
+  label{
+    margin: 0;
+    margin-right: 10px;
+  }
+  p {
+    font-size: 1.5rem;
+    margin: 0px;
+  }
+  rating {
+    display: inline-block;
+    font-size: 2rem;
+    margin: 10px 0;
+  }
+}
+
+.container{
+  p{
+    font-size: 1.8rem;
+  }
+}
+
+#poster{
+  width: 242px;
+  height: 368px;
+  margin-right: 30px;
+  box-shadow: 0 0 15px 5px #111C;
+}
