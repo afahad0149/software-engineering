@@ -1,0 +1,76 @@
+#dashboard-container {
+  /* background-color: aquamarine; */
+  height: 80vh;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.topic-card {
+  background-color: white;
+  min-height: 10vh;
+  min-width: 200px;
+  margin: 16px 0;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid lightgrey;
+  border-radius: 4px;
+  color: rgb(85, 85, 85);
+  transition: 0.2s;
+}
+
+span {
+  color: rgb(85, 85, 85);
+}
+
+.topic-card:hover {
+  background-color: rgb(225, 231, 255);
+}
+
+.card-container {
+  /* background-color: blue; */
+}
+
+.vote-counter {
+  height: 80px;
+  width: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto 0;
+}
+
+.vote-counter h2 {
+  color: rgb(89, 89, 89);
+  transition: 0.2s;
+}
+
+.vote-counter h2:hover {
+  color: black
+}
+
+.topic-content {
+  width: 100%;
+  /* background-color: white; */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.btn-delete {
+  margin: auto 10px auto 0;
+  height: 50px;
+  width: 50px;
+  font-size: 24px;
+  border-radius: 40px;
+  background-color: rgb(138, 175, 235);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.2s;
+}
+
+.btn-delete:hover {
+  background-color: rgb(92 142 220);
+  font-size: 28px;
+}

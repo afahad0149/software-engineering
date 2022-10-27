@@ -1,0 +1,23 @@
+<div id="dashboard-container">
+  <app-form (newPost)="postNewTopic($event)"></app-form>
+  <div class="card-container">
+    <div class="topic-card" *ngFor="let topic of topics | sortTopics">
+      <div class="vote-counter">
+        <button (click)="vote(topic._id, 1)"><h2>▲</h2></button>
+        <h3><span>{{topic.votes}}</span></h3>
+        <button (click)="vote(topic._id, -1)"><h2>▼</h2></button>
+      </div>
+      <div class="topic-content">
+        <div class="topic-inner-container">
+          <h2>{{topic.title}}</h2>
+          <h6>Created on <span>{{displayDate(topic.timestamp)}}{{postDate}}</span></h6>
+        </div>
+      </div>
+      <button (click)="deletePost(topic._id)">
+        <div class="btn-delete">
+          🗑️
+        </div>
+      </button>
+    </div>
+  </div>
+</div>

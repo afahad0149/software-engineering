@@ -1,0 +1,4 @@
+<form [formGroup]="newTopicForm" (ngSubmit)="postNewTopic()">
+  <input type="text" placeholder="Post something new..." formControlName="title">
+  <button>Add Topic</button>
+</form>
