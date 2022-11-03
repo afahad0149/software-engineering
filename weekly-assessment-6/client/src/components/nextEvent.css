@@ -1,0 +1,25 @@
+h2 {
+  margin:10px
+}
+
+h3 {
+  padding:10px;
+}
+
+.next-event-box {
+  background-color: #fd7b10;
+  border-radius: 5px;
+  color:white;
+  margin:30px;
+  padding-bottom:20px;
+  width: 100%;
+}
+
+.next-events {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}

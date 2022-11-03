@@ -1,0 +1,23 @@
+
+.body-events {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+.events-list {
+  position: relative;
+  width: 60vw;
+  display:flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.create-event {
+  position: relative;
+  height: 100vh;
+  display:flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
