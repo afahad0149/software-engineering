@@ -1,0 +1,94 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+header {
+  padding-left: 3rem;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+input {
+  margin-bottom:20px;
+  width: 100%;
+  height: 2rem;
+  border:solid 1px rgba(0, 0, 0, 0.568);
+  padding-left: 0.5rem;
+  border-radius: 10px;
+}
+
+button {
+  cursor: pointer;
+  border: 0;
+  border-radius: 7px;
+  position: block;
+  margin: 20px;
+  width: 20vw;
+  height: 2rem;
+  background-color: #fd7b10;
+}
+button:hover {
+  background-color: #fd7b10e7;
+  border: solid 1px #ccc;
+}
+
+h2 {
+  font-size: 16px;
+  color: #ccc;
+  margin-right: 20px;
+}
+
+.book-card {
+  margin:30px;
+  background-color: #494949;
+  color: white;
+  border-radius: 20px;
+  height: 300px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding:15px
+}
+
+.books-list {
+  display: grid;
+  grid-template-columns: 400px 400px;
+  align-items: center;
+}
+
+.newbook-container {
+  position: fixed;
+  top: 20%;
+  right: 10%;
+  display:flex;
+  justify-content: flex-start;
+  border-radius: 10px;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 2rem;
+}
+
+.newbook-title {
+  margin: 20px;
+  letter-spacing: 2px;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.flex {
+  display: flex;
+}
+
