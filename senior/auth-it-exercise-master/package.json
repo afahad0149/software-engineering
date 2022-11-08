@@ -1,0 +1,51 @@
+{
+  "name": "codeworks-auth-it-exercise-master",
+  "version": "2.0.2",
+  "private": true,
+  "description": "A Codeworks exercise to train students",
+  "scripts": {
+    "test": "DB_NAME=authit_test_db mocha ./test/tests-session.js && mocha ./test/tests-jwt.js",
+    "test:session": "DB_NAME=authit_test_db mocha ./test/tests-session.js",
+    "test:jwt": "DB_NAME=authit_test_db mocha ./test/tests-jwt.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "codeworks/auth-it-exercise-master"
+  },
+  "author": "Codeworks",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.2",
+    "express-session": "^1.17.2",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.1.4"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "chai": "^4.3.4",
+    "cz-changelog": "^1.0.1",
+    "del": "^6.0.0",
+    "eslint": "7.32.0",
+    "eslint-config-react-app": "^6.0.0",
+    "eslint-plugin-flowtype": "^5.7.2",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-json": "^3.0.0",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "gulp": "4.0.2",
+    "gulp-eslint": "^6.0.0",
+    "gulp-load-plugins": "^2.0.7",
+    "gulp-replace": "^1.1.3",
+    "husky": "^6.0.0",
+    "mocha": "^8.4.0",
+    "supertest": "^6.1.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "gulp lint"
+    }
+  }
+}
