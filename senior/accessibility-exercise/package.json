@@ -1,0 +1,28 @@
+{
+  "name": "codeworks-accessibility-exercise",
+  "version": "1.0.2",
+  "description": "A Codeworks exercise to train students",
+  "main": "website/index.html",
+  "author": "Codeworks",
+  "license": "UNLICENSED",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "codeworks/accessibility-exercise"
+  },
+  "dependencies": {
+    "gulp": "^4.0.2"
+  },
+  "devDependencies": {
+    "del": "^6.0.0",
+    "eslint": "^8.15.0",
+    "eslint-plugin-json": "^3.1.0",
+    "gulp-eslint": "^6.0.0",
+    "gulp-load-plugins": "^2.0.7",
+    "gulp-replace": "^1.1.3",
+    "gulp-stylelint": "^13.0.0",
+    "gulp-util": "^3.0.8",
+    "stylelint": "^14.10.0",
+    "stylelint-config-standard": "^27.0.0"
+  }
+}
