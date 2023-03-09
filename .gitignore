@@ -1,5 +1,4 @@
-.DS_Store
-package-lock.json
+.env
 
 *.mp4
 *.wav
@@ -33,5 +32,8 @@ node_modules
 # Custom
 private
 dist
+
+# mac os
+.DS_Store
 
 # rm -fr .git
